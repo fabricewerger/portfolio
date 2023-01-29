@@ -12,12 +12,14 @@ const ListItem = React.forwardRef(
     <li>
       <NavigationMenu.Link asChild>
         <a
-          className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 block text-base no-underline"
+          className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 block text-base no-underline rounded hover:bg-amber-100"
           {...props}
           ref={forwardedRef}
         >
-          <div className="ListItemHeading">{title}</div>
-          <p className="ListItemText">{children}</p>
+          <div className="ListItemHeading mb-1 text-amber-800 text-base">
+            {title}
+          </div>
+          <p className="ListItemTex text-baset">{children}</p>
         </a>
       </NavigationMenu.Link>
     </li>

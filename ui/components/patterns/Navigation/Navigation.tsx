@@ -7,36 +7,15 @@ import ListItem from "./NavigationListItem";
 
 const NavigationMenuDemo = () => {
   return (
-    <NavigationMenu.Root className="relative flex justify-center z-1 w-full">
-      <NavigationMenu.List className="flex justify-center bg-white p-1 border-lg list-none shadow m-0">
+    <NavigationMenu.Root className="relative flex justify-center z-[1] w-full m-2">
+      <NavigationMenu.List className="flex justify-center bg-white p-1 border-lg rounded-lg list-none shadow m-0">
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 flex justify-center justify-between gap-0.5">
-            Learn <CaretDownIcon className="CaretDown" aria-hidden />
+          <NavigationMenu.Trigger className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 flex justify-center rounded justify-between gap-0.5 hover:bg-amber-100">
+            Learn{" "}
+            <CaretDownIcon className="CaretDown relative top-1" aria-hidden />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0 left-0 w-full">
-            <ul className="List one">
-              <li style={{ gridRow: "span 3" }}>
-                <NavigationMenu.Link asChild>
-                  <a className="Callout" href="/">
-                    <svg
-                      aria-hidden
-                      width="38"
-                      height="38"
-                      viewBox="0 0 25 25"
-                      fill="white"
-                    >
-                      <path d="M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z"></path>
-                      <path d="M12 0H4V8H12V0Z"></path>
-                      <path d="M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z"></path>
-                    </svg>
-                    <div className="CalloutHeading">Radix Primitives</div>
-                    <p className="CalloutText">
-                      Unstyled, accessible components for React.
-                    </p>
-                  </a>
-                </NavigationMenu.Link>
-              </li>
-
+          <NavigationMenu.Content className="absolute top-0 left-0 w-full shadow">
+            <ul className="List grid p-[22px] gap-2 list-none w-[500px] one">
               <ListItem href="https://stitches.dev/" title="Stitches">
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
@@ -51,11 +30,12 @@ const NavigationMenuDemo = () => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="NavigationMenuTrigger">
-            Overview <CaretDownIcon className="CaretDown" aria-hidden />
+          <NavigationMenu.Trigger className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 flex justify-center rounded justify-between gap-0.5 hover:bg-amber-100">
+            Overview{" "}
+            <CaretDownIcon className="CaretDown relative top-1" aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
-            <ul className="List two">
+            <ul className="List w-[600px] grid-cols-1 two">
               <ListItem
                 title="Introduction"
                 href="/docs/primitives/overview/introduction"
@@ -99,20 +79,20 @@ const NavigationMenuDemo = () => {
 
         <NavigationMenu.Item>
           <NavigationMenu.Link
-            className="NavigationMenuLink"
+            className="py-2 px-3 outline-none select-none font-medium text-base text-amber-600 flex justify-center justify-between gap-0.5 rounded hover:bg-amber-100"
             href="https://github.com/radix-ui"
           >
             Github
           </NavigationMenu.Link>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Indicator className="NavigationMenuIndicator">
-          <div className="Arrow" />
+        <NavigationMenu.Indicator className="flex items-end justify-center">
+          <div className="Arrow relative top-3/4 bg-white w-2 h-2 rotate-45" />
         </NavigationMenu.Indicator>
       </NavigationMenu.List>
 
-      <div className="ViewportPosition">
-        <NavigationMenu.Viewport className="NavigationMenuViewport" />
+      <div className="ViewportPosition absolute flex justify-center w-full top-full left-0">
+        <NavigationMenu.Viewport className="NavigationMenuViewport relative mt-2 bg-white rounded" />
       </div>
     </NavigationMenu.Root>
   );
